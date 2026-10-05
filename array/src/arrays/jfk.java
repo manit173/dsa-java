@@ -1,16 +1,21 @@
 package arrays;
 
-public class jfk {
-    private static int add(int m, int p){
-        int t = m+p;
-        return t;
-    }
-    private static int add(int a, int b, int c, int d){
-        int gau = a+b+c+d;
-        return gau;
-    }
-    public static void main(String args[]){
-        System.out.println(add(1,2));
-        System.out.println(add(1, 2, 3, 4));
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int k = 0;
+        int idx =0;
+        for (int num : nums) {
+            if (num != val) {
+                k++;
+            }
+        }
+        int expectedNums[] = new int[k];
+        for (int num : nums) {
+            if (num != val) {
+                num = expectedNums[idx];
+                idx++;
+            }
+        }
+        return k;
     }
 }
